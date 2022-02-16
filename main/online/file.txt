@@ -1,6 +1,6 @@
 
-NAME: Kerim
+NAME: Julia
     
-AGE: 18
+AGE: 36
     
-CITY: Kyiv
+CITY: Lutsk
