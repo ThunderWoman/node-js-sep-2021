@@ -1,0 +1,6 @@
+
+NAME: Kerim
+    
+AGE: 18
+    
+CITY: Kyiv

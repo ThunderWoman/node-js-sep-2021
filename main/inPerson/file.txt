@@ -1,0 +1,6 @@
+
+NAME: Julia
+    
+AGE: 36
+    
+CITY: Lutsk
