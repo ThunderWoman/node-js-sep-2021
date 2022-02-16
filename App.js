@@ -22,16 +22,16 @@ const fs = require('fs');
 // 2. Потім створити в вашому головному файлі (для прикладу app.js) два масиви з обєктами user ({. name: "Andrii", age: 22, city: "Lviv" }),
 // відповідно перший - onlineUsers, другий - inPersonUsers;
 
-// let onlineUsers = {name: 'Julia', age: 36, city: 'Lutsk'};
-// let inPersonUsers = {name: 'Kerim', age: 18, city: 'Kyiv'};
+// let onlineUser = {name: 'Julia', age: 36, city: 'Lutsk'};
+// let inPersonUser = {name: 'Kerim', age: 18, city: 'Kyiv'};
 
 // 3. і створити файли txt в папках (online, inPerson) в яких як дату покласти юзерів з ваших масивів, але щоб ваш файл виглядав як NAME:
 // ім'я з обєкту і т.д і всі пункти з нового рядка.
 
 // fs.writeFile(path.join(__dirname, 'main', 'inPerson', 'julia.txt'),
-//     `\nNAME: ${onlineUsers.name}
-//     \nAGE: ${onlineUsers.age}
-//     \nCITY: ${onlineUsers.city}`,
+//     `\nNAME: ${onlineUser.name}
+//     \nAGE: ${onlineUser.age}
+//     \nCITY: ${onlineUser.city}`,
 //     (err) => {
 //         if (err) {
 //             console.log(err);
@@ -40,9 +40,9 @@ const fs = require('fs');
 //     });
 //
 // fs.writeFile(path.join(__dirname, 'main', 'online', 'kerim.txt'),
-//     `\nNAME: ${inPersonUsers.name}
-//     \nAGE: ${inPersonUsers.age}
-//     \nCITY: ${inPersonUsers.city}`,
+//     `\nNAME: ${inPersonUser.name}
+//     \nAGE: ${inPersonUser.age}
+//     \nCITY: ${inPersonUser.city}`,
 //     (err) => {
 //         if (err) {
 //             console.log(err);
