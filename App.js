@@ -6,7 +6,31 @@ const fs = require('fs');
 // 1. Спробуйте створити якийсь файл txt, прочитайте з нього дані і одразу, дані які ви отримали запишіть їх в інший файл, в вас вийде невеликий callback hell, пізніше я вам покажу
 // як можна це обійти, але поки зробіть так
 //
+fs.writeFile(path.join(__dirname, 'file.txt'),
+    'There is some very important iformation in this file))',
+    (err) => {
+        if (err) {
+            console.log(err);
+            throw err;
+        }
+        fs.readFile(path.join(__dirname, 'file.txt'),
+            'utf-8',
+            (err1, data) => {
+                if (err1) {
+                    console.log(err1);
+                    throw err1;
+                }
+                fs.writeFile(path.join(__dirname, 'file2.txt'),
+                    data,
+                    (err2) => {
+                        if (err2) {
+                            console.log(err2);
+                            throw err2;
+                        }
+                    });
+            });
 
+    });
 
 // 2. Створіть файл ( можете вручну ) заповніть його якимись даними
 // Прочитайте його, скопіюйте всі дані з нього і перенесіть їх в нову папку та файл в ній, старий файл видаліть після того як все завершиться. Також вийде callback hell
