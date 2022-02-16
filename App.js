@@ -28,7 +28,7 @@ const fs = require('fs');
 // 3. і створити файли txt в папках (online, inPerson) в яких як дату покласти юзерів з ваших масивів, але щоб ваш файл виглядав як NAME:
 // ім'я з обєкту і т.д і всі пункти з нового рядка.
 
-// fs.writeFile(path.join(__dirname, 'main', 'inPerson', 'file.txt'),
+// fs.writeFile(path.join(__dirname, 'main', 'inPerson', 'julia.txt'),
 //     `\nNAME: ${onlineUsers.name}
 //     \nAGE: ${onlineUsers.age}
 //     \nCITY: ${onlineUsers.city}`,
@@ -39,7 +39,7 @@ const fs = require('fs');
 //         }
 //     });
 //
-// fs.writeFile(path.join(__dirname, 'main', 'online', 'file.txt'),
+// fs.writeFile(path.join(__dirname, 'main', 'online', 'kerim.txt'),
 //     `\nNAME: ${inPersonUsers.name}
 //     \nAGE: ${inPersonUsers.age}
 //     \nCITY: ${inPersonUsers.city}`,
@@ -54,25 +54,25 @@ const fs = require('fs');
 
 let changeUsers = () => {
 
-    fs.readFile(path.join(__dirname, 'main', 'inPerson', 'file.txt'), ((err, data) => {
+    fs.readFile(path.join(__dirname, 'main', 'inPerson', 'julia.txt'), ((err, data) => {
         if (err) {
             console.log(err);
             throw err
         }
 
-        fs.readFile(path.join(__dirname, 'main', 'online', 'file.txt'), (err1, data1) => {
+        fs.readFile(path.join(__dirname, 'main', 'online', 'kerim.txt'), (err1, data1) => {
             if (err1) {
                 console.log(err1)
                 throw err
             }
 
-            fs.writeFile(path.join(__dirname, 'main', 'inPerson', 'file.txt'), data1, err2 => {
+            fs.writeFile(path.join(__dirname, 'main', 'inPerson', 'julia.txt'), data1, err2 => {
                 if (err2) {
                     console.log(err2)
                     throw err2
                 }
 
-                fs.writeFile(path.join(__dirname, 'main', 'online', 'file.txt'), data, err2 => {
+                fs.writeFile(path.join(__dirname, 'main', 'online', 'kerim.txt'), data, err2 => {
                     if (err2) {
                         console.log(err2)
                         throw err2
