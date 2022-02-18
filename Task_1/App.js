@@ -12,12 +12,12 @@ fs.writeFile(path.join(__dirname, 'classwork.txt'), 'First classwork', (err) => 
         console.log(err);
         throw err;
     }
-    fs.readFile(path.join(__dirname, 'classwork.txt'),(err1, data) => {
+    fs.readFile(path.join(__dirname, 'classwork.txt'), (err1, data) => {
         if (err1) {
             console.log(err1);
-            throw err1;
+            throw err;
         }
-        fs.writeFile(path.join(__dirname, 'classwork_2.txt'), data, (err2) => {
+        fs.appendFile(path.join(__dirname, 'classwork_2.txt'), data.toString(), (err2) => {
             if (err2) {
                 console.log(err2);
                 throw err2;
