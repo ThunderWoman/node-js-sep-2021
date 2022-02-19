@@ -50,45 +50,16 @@ async function reMake(firstFolder, secondFolder) {
 }
 reMake('Second', 'Third');
 reMake('Third','Second');
-//
-// function pathCheck() {
-//     fs.readdir(path.join(__dirname, 'newDir2'),
-//         (err, data) => {
-//             if (err) {
-//                 console.log(err);
-//                 throw err;
-//             }
-//             data.forEach((item) => {
-//                 fs.stat(path.join(__dirname, 'newDir2', item),
-//                     (err1, stats) => {
-//                         if (err1) {
-//                             console.log(err1);
-//                             throw err1;
-//                         }
-//                         if (stats.isFile()) {
-//                             fs.truncate(path.join(__dirname, 'newDir2', item),
-//                                 (err3) => {
-//                                     if (err3) {
-//                                         console.log(err3);
-//                                         throw err3
-//                                     }
-//                                 })
-//                         } else {
-//                             fs.rename(path.join(__dirname, 'newDir2', item),
-//                                 path.join(__dirname, 'newDir2', `_new${item}`),
-//                                 (err4) => {
-//                                     if (err4) {
-//                                         console.log(err4);
-//                                         throw err4;
-//                                     }
-//                                 });
-//                         }
-//                     }
-//                 );
-//             });
-//         }
-//     )
-// }
-//
-//
-// pathCheck();
+
+const reName = async (moveFrom, moveTo) => {
+    const pathToDir = path.join(__dirname, 'First', moveFrom);
+    const arrDirNames = await fs.readdir(pathToDir);
+
+    arrDirNames.map(dirName => {
+        if (!dirName.includes('new_') && !dirName.includes('.txt')) {
+            fs.rename(path.join(pathToDir, dirName), path.join(__dirname, 'First', moveTo, `new_${dirName}`));
+        }
+    });
+}
+reName('Second', 'Third');
+reName('Third','Second');
