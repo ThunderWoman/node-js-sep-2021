@@ -1,9 +1,9 @@
-const loginRouter = require('express').Router();
+const router = require('express').Router();
 
-const loginController = require('../controllers');
-const isAllData = require('../middleware');
+const { loginController } = require('../controllers');
+const { userMiddleware } = require('../middleware');
 
-loginRouter.get('/', loginController.renderPage);
-loginRouter.post('/', isAllData, loginController.loginUser);
+router.get('/', loginController.getCreateUserForm);
+router.post('/', userMiddleware.isUserDataValid, loginController.createUser);
 
-module.exports = loginRouter;
+module.exports = router;
